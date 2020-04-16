@@ -8,7 +8,7 @@ namespace Assignment4.Entities.Enums
 {
     public enum Color
     {
-        Blue = 1,
+        Blue ,
         Green,
         Indigo,
         Orange,

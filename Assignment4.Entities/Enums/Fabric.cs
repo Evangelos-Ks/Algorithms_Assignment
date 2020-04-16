@@ -8,7 +8,7 @@ namespace Assignment4.Entities.Enums
 {
     public enum Fabric
     {
-        Cashmere = 1,
+        Cashmere,
         Cotton,
         Linel,
         Polyester,

@@ -8,7 +8,7 @@ namespace Assignment4.Entities.Enums
 {
     public enum Size
     {
-        XS = 1,
+        XS,
         S,
         M,
         L,
