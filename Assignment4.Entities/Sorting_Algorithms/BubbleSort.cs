@@ -25,7 +25,6 @@ namespace Assignment4.Entities.Sorting_Algorithms
             }
         }
 
-
        public delegate bool Check();
     }
 
