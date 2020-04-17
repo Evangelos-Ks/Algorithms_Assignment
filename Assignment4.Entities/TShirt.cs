@@ -11,9 +11,9 @@ namespace Assignment4.Entities
     public class TShirt
     {
         //============================= Properties ===========================================================
-        protected Color color { get; }
-        protected Fabric fabric { get; }
-        protected Size size { get; }
+        public Color color { get; }
+        public Fabric fabric { get; }
+        public Size size { get; }
 
         //============================= Constractors ===========================================================
         public TShirt() { }
