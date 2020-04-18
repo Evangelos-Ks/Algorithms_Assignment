@@ -28,11 +28,10 @@ namespace Assignment4.Entities
        public void Output(List<TShirt> shirts)
         {
             int count = 1;
-
             foreach (var shirt in shirts)
             {
                 Console.Write("\t");
-                Console.WriteLine("{0, -15}{1, -15}{2,-15}{3,-15}", count++,  shirt.color,shirt.fabric, shirt.size);
+                Console.WriteLine("{0, -15}{1, -15}{2,-15}{3,-15}", count++, shirt.color, shirt.fabric, shirt.size);
             }
         }
     }

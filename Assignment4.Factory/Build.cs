@@ -19,34 +19,75 @@ namespace Assignment4.Factory
         {
             Shirt = new TShirt();
             Database = new MyDatabase();
-            GenerateAllCombinationsOfShirts();
         }
 
         //============================================= Protected methods =======================================================
-        protected void GenerateAllCombinationsOfShirts()
+        protected void GenerateCombinationsOfShirts(int numberOfTshirths)
         {
-           
 
-            for (int i = 0; i < Database.colors.Count; i++)
+            Random random = new Random();
+            int numberOfColor;
+            int numberOfFabric;
+            int numberOSize;
+            int numberOfColors = Database.colors.Count;
+            int numberOfFabrics = Database.fabrics.Count;
+            int numberOfSizes = Database.sizes.Count;
+
+            for (int i = 0; i < numberOfTshirths; i++)
             {
-                for (int j = 0; j < Database.fabrics.Count; j++)
-                {
-                    for (int k = 0; k < Database.sizes.Count; k++)
-                    {
-                        TShirt ts = new TShirt(Database.colors[i], Database.fabrics[j], Database.sizes[k]);
-                        Database.shirts.Add(ts);
-                    }
-                }
+                numberOfColor = random.Next(0, numberOfColors - 1);
+                numberOfFabric = random.Next(0, numberOfFabrics - 1);
+                numberOSize = random.Next(0, numberOfSizes - 1);
+
+                TShirt ts = new TShirt(Database.colors[numberOfColor], Database.fabrics[numberOfFabric], Database.sizes[numberOSize]);
+                Database.shirts.Add(ts);
             }
         }
 
+        protected int InsertAndCheck()
+        {
+            bool success;
+            int select = 0;
+
+            do
+            {
+                Console.WriteLine();
+                Console.Write("\tInsert a number : ");
+
+                success = true;
+                try
+                {
+                    select = Convert.ToInt32(Console.ReadLine().Trim());
+                    success = false;
+                    if (select < 1 )
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine("\tPlease select a non zerow possitive number.");
+                        Console.ForegroundColor = ConsoleColor.White;
+                        Console.WriteLine();
+                        success = true;
+                    }
+                }
+                catch (Exception)
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("\tPlease select an appropriate number");
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.WriteLine();
+                    success = true;
+                }
+            } while (success);
+
+            return select;
+        }
+
         //============================================= Public methods =======================================================
-        public void StartMenu()
+        public void MenuOfCreateTShirts()
         {
             Console.WriteLine();
             Console.WriteLine("\t");
-            Console.Write("\tPress any Key to see all the variations of T-Shirt.  ");
-            Console.ReadKey();
+            Console.WriteLine("\tHow many random variations of T-Shirt would you like?");
+            GenerateCombinationsOfShirts(InsertAndCheck());
             Console.WriteLine();
             Console.WriteLine();
             Console.ForegroundColor = ConsoleColor.Green;
