@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Assignment4.Entities.ToolMethods;
 
 namespace Assignment4.Factory
 {
@@ -44,42 +45,6 @@ namespace Assignment4.Factory
             }
         }
 
-        protected int InsertAndCheck()
-        {
-            bool success;
-            int select = 0;
-
-            do
-            {
-                Console.WriteLine();
-                Console.Write("\tInsert a number : ");
-
-                success = true;
-                try
-                {
-                    select = Convert.ToInt32(Console.ReadLine().Trim());
-                    success = false;
-                    if (select < 1 )
-                    {
-                        Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine("\tPlease select a non zerow possitive number.");
-                        Console.ForegroundColor = ConsoleColor.White;
-                        Console.WriteLine();
-                        success = true;
-                    }
-                }
-                catch (Exception)
-                {
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("\tPlease select an appropriate number");
-                    Console.ForegroundColor = ConsoleColor.White;
-                    Console.WriteLine();
-                    success = true;
-                }
-            } while (success);
-
-            return select;
-        }
 
         //============================================= Public methods =======================================================
         public void MenuOfCreateTShirts()
@@ -87,7 +52,7 @@ namespace Assignment4.Factory
             Console.WriteLine();
             Console.WriteLine("\t");
             Console.WriteLine("\tHow many random variations of T-Shirt would you like?");
-            GenerateCombinationsOfShirts(InsertAndCheck());
+            GenerateCombinationsOfShirts(Check.InsertAndCheckNumber());
             Console.WriteLine();
             Console.WriteLine();
             Console.ForegroundColor = ConsoleColor.Green;
@@ -96,6 +61,30 @@ namespace Assignment4.Factory
             Console.WriteLine();
             Console.ForegroundColor = ConsoleColor.White;
             Shirt.Output(Database.shirts);
+            Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.Magenta;
+            Console.Write("\t==========================================================================");
+            Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.White;
+        }
+
+        public void SelectSortingMenu()
+        {
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine("\tPlease select the number of the appropriate sorting.");
+            Console.WriteLine();
+            Console.WriteLine("\t1. Size in ascending");
+            Console.WriteLine("\t2. Size in descending");
+            Console.WriteLine("\t3. Color in ascending");
+            Console.WriteLine("\t4. Color in descending");
+            Console.WriteLine("\t5. Fabric in ascending");
+            Console.WriteLine("\t6. Fabric in descending");
+            Console.WriteLine("\t7. Size and Color and Fabric in ascending");
+            Console.WriteLine("\t8. Size and Color and Fabric in descending");
+            Check.InsertAndCheckNumber();
+
+
         }
         
     }

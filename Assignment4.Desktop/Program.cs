@@ -14,6 +14,7 @@ namespace Assignment4.Desktop
             Build build = new Build();
 
             build.MenuOfCreateTShirts();
+            build.SelectSortingMenu();
             
             Console.ReadKey();
         }
