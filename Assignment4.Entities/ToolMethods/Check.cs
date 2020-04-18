@@ -8,6 +8,11 @@ namespace Assignment4.Entities.ToolMethods
 {
     public class Check
     {
+        public Check()
+        {
+            test test = CheckGraterNumberOneFromNumberTwo;
+            test += CheckSmallerNumberOneFromNumberTwo;
+        }
         //Ask for a number and checks if it is a higter than zero number
         public static int InsertAndCheckNumber()
         {
@@ -46,6 +51,19 @@ namespace Assignment4.Entities.ToolMethods
             return select;
         }
 
+        //Check the if number one is grater than number two 
+        protected bool CheckGraterNumberOneFromNumberTwo(int numberOne, int numberTwo)
+        {
+            return numberOne > numberTwo;
+        }
+
+        //Check the if number one is smaller than number two 
+        protected bool CheckSmallerNumberOneFromNumberTwo(int numberOne, int numberTwo)
+        {
+            return numberOne < numberTwo;
+        }
+
+        public delegate bool test(int one, int two);
 
     }
 }
