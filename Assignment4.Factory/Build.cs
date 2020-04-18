@@ -109,6 +109,12 @@ namespace Assignment4.Factory
                 Console.WriteLine("\t8. Size and Color and Fabric in descending");
 
                 SelectSorting();
+                Console.WriteLine();
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.Write("\t");
+                Console.Write("{0, -15}{1,-15}{2,-15}{3,-15}", "Number", "Color", "Fabric", "Size");
+                Console.WriteLine();
+                Console.ForegroundColor = ConsoleColor.White;
                 Shirt.Output(Database.shirts);
 
                 Console.WriteLine();
