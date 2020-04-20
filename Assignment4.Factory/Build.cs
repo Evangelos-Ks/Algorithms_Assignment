@@ -16,14 +16,14 @@ namespace Assignment4.Factory
         protected MyDatabase Database { get; }
         protected TShirt Shirt { get; }
 
-        //============================================= Constructor methods =======================================================
+        //============================================= Constructor methods ==============================================
         public Build()
         {
             Shirt = new TShirt();
             Database = new MyDatabase();
         }
 
-        //============================================= Protected methods =======================================================
+        //============================================= Protected methods ================================================
         protected void GenerateCombinationsOfShirts(int numberOfTshirths)
         {
 
@@ -67,7 +67,7 @@ namespace Assignment4.Factory
         }
 
 
-        //============================================= Public methods =======================================================
+        //============================================= Public methods ===================================================
         public void MenuOfCreateTShirts()
         {
             Console.WriteLine();
