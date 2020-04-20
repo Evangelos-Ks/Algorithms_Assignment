@@ -13,19 +13,7 @@ namespace Assignment4.Entities.Sorting_Algorithms
         //============================================= Partition ==========================================================
         protected static int Partition(List<TShirt> shirts, int low, int high, Check.test comparison)
         {
-
-            //This is the original way to find the pivot
             TShirt pivot = shirts[high];
-
-            //This logic for the pivot point implemented by Koutsogiorgos Evangelos
-            //int potentialPivot1 = (int)shirts[high].color;
-            //int potentialPivot2 = (int)shirts[low].color;
-            //int potentialPivot3 = (int)shirts[(low + high) / 2].color;
-
-            //List<int> pontentialPivotsArr = new List<int> { potentialPivot1, potentialPivot2, potentialPivot3 };
-            //pontentialPivotsArr.Sort();
-            //int pivot = pontentialPivotsArr[1];
-            //Until here
 
             // index of smaller element 
             TShirt temp;
