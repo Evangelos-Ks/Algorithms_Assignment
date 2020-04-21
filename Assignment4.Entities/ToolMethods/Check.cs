@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Assignment4.Entities.Enums;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -53,7 +54,7 @@ namespace Assignment4.Entities.ToolMethods
 
         //Check the if number one is grater than number two 
         protected bool CheckGraterNumberOneFromNumberTwo(int numberOne, int numberTwo)
-        {
+        { 
             return numberOne > numberTwo;
         }
 
@@ -64,6 +65,5 @@ namespace Assignment4.Entities.ToolMethods
         }
 
         public delegate bool test(int one, int two);
-
     }
 }

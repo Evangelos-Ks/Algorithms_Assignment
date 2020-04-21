@@ -46,6 +46,8 @@
     <Compile Include="Enums\Size.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sorting_Algorithms\BubbleSort.cs" />
+    <Compile Include="Sorting_Algorithms\BucketSort.cs" />
+    <Compile Include="Sorting_Algorithms\InsertionSort.cs" />
     <Compile Include="Sorting_Algorithms\QuickSort.cs" />
     <Compile Include="ToolMethods\Check.cs" />
     <Compile Include="TShirt.cs" />

@@ -66,6 +66,12 @@ namespace Assignment4.Factory
                 case 4:
                     QuickSort.ExecuteQuickSort(Database.shirts, 0, Database.shirts.Count - 1, (x, y) => x < y);
                     break;
+                case 5:
+                    InsertionSort.ExecuteInsertionSort(Database.shirts, (x, y) => x > y);
+                    break;
+                case 6:
+                    InsertionSort.ExecuteInsertionSort(Database.shirts, (x, y) => x < y);
+                    break;
                 default:
                     BubbleSort.ExecuteBubbleSort(Database.shirts, (x, y) => x > y);
                     break;
