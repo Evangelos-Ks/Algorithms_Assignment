@@ -1,9 +1,4 @@
-﻿using Assignment4.Entities.Enums;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 
 namespace Assignment4.Entities.ToolMethods
 {
@@ -12,8 +7,6 @@ namespace Assignment4.Entities.ToolMethods
         //============================================= Contractor =========================================================
         public Check()
         {
-            //test test = CheckGraterNumberOneFromNumberTwo;
-            //test += CheckSmallerNumberOneFromNumberTwo;
             comparison comparison = CheckMaterialsAsc;
             comparison = CheckMaterialsDesc;
         }
@@ -58,12 +51,7 @@ namespace Assignment4.Entities.ToolMethods
             return select;
         }
 
-        //Check the if number one is grater than number two 
-        //protected bool CheckGraterNumberOneFromNumberTwo(int numberOne, int numberTwo)
-        //{
-        //    return numberOne > numberTwo;
-        //}
-
+        //It Compares and return a bool
         protected bool CheckMaterialsAsc(TShirt shirt1, TShirt shirt2)
         {
             if ((int)shirt1.size > (int)shirt2.size) return true;
@@ -72,6 +60,7 @@ namespace Assignment4.Entities.ToolMethods
             else return false;
         }
 
+        //It Compares and return a bool
         protected bool CheckMaterialsDesc(TShirt shirt1, TShirt shirt2)
         {
             if ((int)shirt1.size < (int)shirt2.size) return true;
@@ -79,15 +68,8 @@ namespace Assignment4.Entities.ToolMethods
             else if (((int)shirt1.fabric < (int)shirt2.fabric)) return true;
             else return false;
         }
-        //Check the if number one is smaller than number two 
-        //protected bool CheckSmallerNumberOneFromNumberTwo(int numberOne, int numberTwo)
-        //{
-        //    return numberOne < numberTwo;
-        //}
 
         //============================================= Delegates ==========================================================
-
-        //public delegate bool test(int one, int two);
 
         public delegate bool comparison(TShirt shirt1, TShirt shirt2);
     }

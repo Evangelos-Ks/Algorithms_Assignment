@@ -1,10 +1,6 @@
 ﻿using Assignment4.Database;
 using Assignment4.Entities;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Assignment4.Entities.ToolMethods;
 using Assignment4.Entities.Sorting_Algorithms;
 
@@ -16,7 +12,7 @@ namespace Assignment4.Factory
         protected MyDatabase Database { get; }
         protected TShirt Shirt { get; }
 
-        //============================================= Constructor methods ==============================================
+        //============================================= Constructor ======================================================
         public Build()
         {
             Shirt = new TShirt();

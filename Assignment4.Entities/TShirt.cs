@@ -1,10 +1,6 @@
 ﻿using Assignment4.Entities.Enums;
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Assignment4.Entities
 {
@@ -25,7 +21,7 @@ namespace Assignment4.Entities
         }
 
         //============================= Methods ===============================================================
-       public void Output(List<TShirt> shirts)
+        public void Output(List<TShirt> shirts)
         {
             int count = 1;
             foreach (var shirt in shirts)
