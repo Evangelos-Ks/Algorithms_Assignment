@@ -10,6 +10,8 @@ namespace Assignment4.Entities
         public Color color { get; }
         public Fabric fabric { get; }
         public Size size { get; }
+        public decimal TShirtPrice { get; }
+
 
         //============================= Constractors ===========================================================
         public TShirt() { }
@@ -18,6 +20,7 @@ namespace Assignment4.Entities
             this.color = color;
             this.fabric = fabric;
             this.size = size;
+            TShirtPrice = (Colors.Cost[color] + Fabrics.Cost[fabric] + Sizes.Cost[size]);
         }
 
         //============================= Methods ===============================================================
@@ -29,6 +32,33 @@ namespace Assignment4.Entities
                 Console.Write("\t");
                 Console.WriteLine("{0, -15}{1, -15}{2,-15}{3,-15}", count++, shirt.color, shirt.fabric, shirt.size);
             }
+        }
+
+        public decimal CalculatePriceOfTShirts(List<TShirt> shirts)
+        {
+            decimal amount = 0;
+
+            foreach (var shirt in shirts)
+            {
+                amount += shirt.TShirtPrice;
+            }
+
+            return amount;
+        }
+
+        public void DisplayThePriceOfTshirts(decimal amount)
+        {
+            Console.ForegroundColor = ConsoleColor.Magenta;
+            Console.WriteLine();
+            Console.Write("\t==========================================================================");
+            Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.White;
+
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine();
+            Console.WriteLine($"\tThe amount of T-Shirts are {amount}.");
+            Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.White;
         }
     }
 }
