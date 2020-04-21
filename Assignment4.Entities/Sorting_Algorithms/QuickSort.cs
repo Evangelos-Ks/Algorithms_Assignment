@@ -11,7 +11,7 @@ namespace Assignment4.Entities.Sorting_Algorithms
     public class QuickSort
     {
         //============================================= Partition ==========================================================
-        protected static int Partition(List<TShirt> shirts, int low, int high, Check.test comparison)
+        protected static int Partition(List<TShirt> shirts, int low, int high, Check.comparison comparison)
         {
             TShirt pivot = shirts[high];
 
@@ -22,7 +22,7 @@ namespace Assignment4.Entities.Sorting_Algorithms
             {
                 // If current element is smaller  
                 // than the pivot 
-                if (!comparison((int)shirts[j].color, (int)pivot.color))
+                if (!comparison(shirts[j], pivot))
                 {
                     i++;
 
@@ -42,7 +42,7 @@ namespace Assignment4.Entities.Sorting_Algorithms
         }
 
         //============================================= Quick Sort =========================================================
-        public static void ExecuteQuickSort(List<TShirt> shirts, int low, int high, Check.test comparison)
+        public static void ExecuteQuickSort(List<TShirt> shirts, int low, int high, Check.comparison comparison)
         {
             if (low < high)
             {

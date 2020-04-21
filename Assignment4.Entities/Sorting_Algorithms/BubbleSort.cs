@@ -9,7 +9,7 @@ namespace Assignment4.Entities.Sorting_Algorithms
 {
     public class BubbleSort
     {
-        public static void ExecuteBubbleSort(List<TShirt> shirts, Check.test comparison)
+        public static void ExecuteBubbleSort(List<TShirt> shirts, Check.comparison comparison)
         {
             
             TShirt temporary;
@@ -17,7 +17,7 @@ namespace Assignment4.Entities.Sorting_Algorithms
             {
                 for (int i = 0; i <= shirts.Count - 2; i++)
                 {
-                    if (comparison((int)shirts[i].size , (int)shirts[i + 1].size))
+                    if (comparison(shirts[i] ,shirts[i + 1]))
                     { 
                         temporary = shirts[i + 1];
                         shirts[i + 1] = shirts[i];

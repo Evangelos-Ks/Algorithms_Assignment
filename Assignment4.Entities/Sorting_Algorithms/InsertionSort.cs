@@ -9,7 +9,7 @@ namespace Assignment4.Entities.Sorting_Algorithms
 {
     public class InsertionSort
     {
-        public static void ExecuteInsertionSort(List<TShirt> shirts, Check.test test)
+        public static void ExecuteInsertionSort(List<TShirt> shirts, Check.comparison comparison)
         {
             int n = shirts.Count;
             for (int i = 1; i < n; ++i)
@@ -17,7 +17,7 @@ namespace Assignment4.Entities.Sorting_Algorithms
                 TShirt key = shirts[i];
                 int j = i - 1;
 
-                while (j >= 0 && test((int)shirts[j].fabric, (int)key.fabric))
+                while (j >= 0 && comparison(shirts[j], key))
                 {
                     shirts[j + 1] = shirts[j];
                     j = j - 1;

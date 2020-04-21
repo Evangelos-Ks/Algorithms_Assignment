@@ -50,34 +50,39 @@ namespace Assignment4.Factory
         {
             Check check = new Check();
 
-            int input = Check.InsertAndCheckNumber();
+            int input = Check.InsertAndCheckNumber(8);
 
             switch (input)
             {
                 case 1 :
-                    BubbleSort.ExecuteBubbleSort(Database.shirts, (x, y) => x > y);
+                    BubbleSort.ExecuteBubbleSort(Database.shirts, (x, y) => x.size > y.size);
                     break;
                 case 2:
-                    BubbleSort.ExecuteBubbleSort(Database.shirts, (x, y) => x < y);
+                    BubbleSort.ExecuteBubbleSort(Database.shirts, (x, y) => x.size < y.size);
                     break;
                 case 3:
-                    QuickSort.ExecuteQuickSort(Database.shirts, 0, Database.shirts.Count - 1, (x , y) => x > y);
+                    QuickSort.ExecuteQuickSort(Database.shirts, 0, Database.shirts.Count - 1, (x , y) => x.color > y.color);
                     break;
                 case 4:
-                    QuickSort.ExecuteQuickSort(Database.shirts, 0, Database.shirts.Count - 1, (x, y) => x < y);
+                    QuickSort.ExecuteQuickSort(Database.shirts, 0, Database.shirts.Count - 1, (x, y) => x.color < y.color);
                     break;
                 case 5:
-                    InsertionSort.ExecuteInsertionSort(Database.shirts, (x, y) => x > y);
+                    InsertionSort.ExecuteInsertionSort(Database.shirts, (x, y) => x.fabric > y.fabric);
                     break;
                 case 6:
-                    InsertionSort.ExecuteInsertionSort(Database.shirts, (x, y) => x < y);
+                    InsertionSort.ExecuteInsertionSort(Database.shirts, (x, y) => x.fabric < y.fabric);
+                    break;
+                case 7:
+                    BucketSort.ExecuteBucketSort(Database.shirts, (x, y) => x.size > y.size, (x, y) => x.color > y.color, (x, y) => x.fabric > y.fabric);
+                    break;
+                case 8:
+                    BucketSort.ExecuteBucketSort(Database.shirts, (x, y) => x.size < y.size, (x, y) => x.color < y.color, (x, y) => x.fabric < y.fabric);
                     break;
                 default:
-                    BubbleSort.ExecuteBubbleSort(Database.shirts, (x, y) => x > y);
+                    BubbleSort.ExecuteBubbleSort(Database.shirts, (x, y) => x.size > y.size);
                     break;
             }
         }
-
 
         //============================================= Public methods ===================================================
         public void MenuOfCreateTShirts()
@@ -85,7 +90,7 @@ namespace Assignment4.Factory
             Console.WriteLine();
             Console.WriteLine("\t");
             Console.WriteLine("\tHow many random variations of T-Shirt would you like?");
-            GenerateCombinationsOfShirts(Check.InsertAndCheckNumber());
+            GenerateCombinationsOfShirts(Check.InsertAndCheckNumber(10000000));
             Console.WriteLine();
             Console.WriteLine();
             Console.ForegroundColor = ConsoleColor.Green;
