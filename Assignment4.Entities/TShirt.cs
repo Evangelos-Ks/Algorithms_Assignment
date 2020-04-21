@@ -30,7 +30,7 @@ namespace Assignment4.Entities
             foreach (var shirt in shirts)
             {
                 Console.Write("\t");
-                Console.WriteLine("{0, -15}{1, -15}{2,-15}{3,-15}", count++, shirt.color, shirt.fabric, shirt.size);
+                Console.WriteLine("{0, -15}{1, -15}{2,-15}{3,-15}{4,-15}", count++, shirt.color, shirt.fabric, shirt.size, shirt.TShirtPrice);
             }
         }
 
