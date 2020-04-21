@@ -7,6 +7,7 @@ namespace Assignment3.Entities.PaymentMethods
     {
         public abstract string Name { get; }
         public abstract bool Pay(decimal amount);
+        public abstract void UnsuccessfulMessage();
 
         //===================================== Methods ====================================================================
         public static List<PaymetnMethod> paymentMethodsList = new List<PaymetnMethod>() 
@@ -31,6 +32,7 @@ namespace Assignment3.Entities.PaymentMethods
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine();
                 Console.WriteLine("\tThe transaction was unsuccessful.");
+                UnsuccessfulMessage();
                 Console.WriteLine();
                 Console.ForegroundColor = ConsoleColor.White;
             }

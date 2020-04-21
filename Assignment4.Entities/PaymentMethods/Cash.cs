@@ -1,4 +1,6 @@
-﻿namespace Assignment3.Entities.PaymentMethods
+﻿using System;
+
+namespace Assignment3.Entities.PaymentMethods
 {
     class Cash : PaymetnMethod
     {
@@ -10,6 +12,15 @@
         {
             if (amount <= 0) return false;
             else return true;
+        }
+
+        public override void UnsuccessfulMessage()
+        {
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine();
+            //Message
+            Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.White;
         }
     }
 }
